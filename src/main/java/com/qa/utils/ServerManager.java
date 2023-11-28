@@ -44,7 +44,8 @@ public class ServerManager {
         return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
                 .usingDriverExecutable(new File("/usr/local/lib/nodejs/node-v18.13.0-linux-x64/bin/node"))
                 .withAppiumJS(new File("/usr/local/lib/nodejs/node-v18.13.0-linux-x64/lib/node_modules/appium/build/lib/main.js"))
-                .usingPort(4723)
+                .usingAnyFreePort()
+         //       .usingPort(4723)
                 .withArgument(GeneralServerFlag.SESSION_OVERRIDE)                            //To override the existing session
          //       .withEnvironment(environment)
                 .withLogFile(new File(params.getPlaformName() +"_" + params.getDeviceName() + File.separator + "server.log")) );
