@@ -11,12 +11,14 @@ public class GlobalParams {
     protected static ThreadLocal <String> udid= new ThreadLocal<String>();
     protected static ThreadLocal <String> deviceName = new ThreadLocal<String>();
     protected static ThreadLocal <String> platformName = new ThreadLocal<String>();
+    protected static ThreadLocal <String> automationName = new ThreadLocal<String>();
+
 
     public String getUdid(){
-        return  udid.get();
+        return udid.get();
     }
     public void setUdid(String udid2){
-         udid.set( udid2);
+         udid.set(udid2);
     }
     public String getDeviceName() {
         return deviceName.get();
@@ -32,11 +34,22 @@ public class GlobalParams {
         platformName.set(platform2);
     }
 
+    public String getAutomationName() {
+        return automationName.get();
+    }
+
+    public void setAutomationName(String platform2) {
+        automationName.set(platform2);
+    }
+
     public void initializeGlobalParams(){
         GlobalParams params = new GlobalParams();
+        Properties props = new Properties();
         params.setPlatform(System.getProperty("platformName", "Android"));
         params.setDeviceName(System.getProperty("deviceName", "Realme 7"));
         params.setUdid(System.getProperty("udid", "L7854L45IJ8X5L5X"));
+        params.setAutomationName(props.getProperty("automationName"));
+
     }
 
 }

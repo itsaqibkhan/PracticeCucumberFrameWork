@@ -25,11 +25,8 @@ public class PropertyManager {
             }finally {
                 if(is !=null)
                  is.close();
-
             }
         }
-
-
 
 
 
