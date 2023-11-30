@@ -26,6 +26,7 @@ public class Hooks {
         {
             driverManager.getDriver().quit();
             driverManager.setDriver(null);
+
         }
         ServerManager serverManager = new ServerManager();
         if (!(serverManager.getServer() ==null)){
