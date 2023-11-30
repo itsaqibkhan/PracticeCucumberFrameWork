@@ -1,5 +1,7 @@
 package com.qa.utils;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -9,10 +11,11 @@ import java.util.Properties;
 public class CapabilitiesManager {
 
     TestUtils utils = new TestUtils();
+    GlobalParams params = new GlobalParams();
 
-    public DesiredCapabilities getProps() throws IOException {
-        GlobalParams params = new GlobalParams();
-        Properties props = new PropertyManager().getProps();
+
+    public DesiredCapabilities getCaps() throws IOException {
+    GlobalParams params = new GlobalParams();
 
         try {
             utils.log().info("Getting capabilities");
