@@ -25,9 +25,9 @@ public class CapabilitiesManager {
             caps.setCapability("udid", params.getUdid());
             caps.setCapability("automationName", params.getAutomationName());
             String appUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test" +
-                    File.separator + "resources" + File.separator + "app" + File.separator +  "Android-MyDemoAppRN.1.3.0.build-244(1).apk";
+                    File.separator + "resources" + File.separator + "apps" + File.separator +  "Android-MyDemoAppRN.1.3.0.build-244(1).apk";
             utils.log().info("App url is:" + appUrl);
-            caps.setCapability("app", "appUrl");
+            caps.setCapability("app", appUrl);
             return caps;
         } catch(Exception e){
             e.printStackTrace();

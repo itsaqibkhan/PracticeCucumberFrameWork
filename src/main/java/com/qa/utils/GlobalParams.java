@@ -3,6 +3,7 @@ package com.qa.utils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -42,9 +43,13 @@ public class GlobalParams {
         automationName.set(platform2);
     }
 
-    public void initializeGlobalParams(){
+    PropertyManager propertyManager = new PropertyManager();
+
+
+
+    public void initializeGlobalParams() throws IOException {
         GlobalParams params = new GlobalParams();
-        Properties props = new Properties();
+        Properties props = propertyManager.getProps();
         params.setPlatform(System.getProperty("platformName", "Android"));
         params.setDeviceName(System.getProperty("deviceName", "Realme 7"));
         params.setUdid(System.getProperty("udid", "L7854L45IJ8X5L5X"));

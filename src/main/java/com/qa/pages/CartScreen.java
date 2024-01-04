@@ -14,7 +14,7 @@ public class CartScreen extends HeaderBar{
         return getAttribute(productTitle, "text");
     }
     public String getProductPriceCart(int item){
-        By element = By.xpath("(//android.widget.TextView[@content-desc=\"product price\"])" + "[" + item + "]");
+        By element = By.xpath("(//android.widget.TextView[@content-desc=\"product price\"])" +  "[" + item + "]");
         WebElement productPrice = driver.findElement(element);
         return getAttribute(productPrice, "text");
     }

@@ -23,6 +23,12 @@ public class HomeScreen extends HeaderBar {
     public String getSLBName(){
         return getAttribute(SLBTitle, "text");
     }
+
+    public ProductDetail pressSLBName(){
+        click(SLBTitle);
+        return new ProductDetail();
+    }
+
     public String getSauceLightName(){
         return getAttribute(sauceLightTitle, "text");
     }

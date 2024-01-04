@@ -4,36 +4,18 @@ import com.qa.utils.DriverManager;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.InteractsWithApps;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.screenrecording.CanRecordScreen;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
-import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.logging.log4j.ThreadContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.time.Duration;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
 
 
 public class BasePage {
 
-    private final AppiumDriver driver;
+    protected final AppiumDriver driver;
     TestUtils utils = new TestUtils();
 
     public BasePage(){

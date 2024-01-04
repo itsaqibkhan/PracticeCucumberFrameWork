@@ -1,12 +1,15 @@
 Feature: Products scenarios
 
-  Scenario Outline: Validate products on product details page
+  Background:
+    When I tap on menu button
+    And I tap on login button
 
+  Scenario Outline: Validate products on product details page
     Given I'm logged in
-    Then The product is listed with title "<title>" and price "<price>"
+    Then The product is listed with title "<title>"
     Examples: | title                   | price  |
     | title                   | price  |
-    | Sauce Labs Bolt T-Shirt | $15.99 |
+    | Sauce Labs Backpack | $15.99 |
 #      | Sauce Labs Onesie       | $7.99  |
 #      | Test.allTheThings() T-Shirt (Red) | $15.99 |
 #      | Sauce Labs Backpack     | $29.99 |

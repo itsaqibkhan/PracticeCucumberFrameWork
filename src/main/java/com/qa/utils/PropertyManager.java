@@ -9,7 +9,7 @@ public class PropertyManager {
     private static Properties props = new Properties();
     TestUtils utils = new TestUtils();
 
-    public Properties getProps() throws IOException {
+    public  Properties getProps() throws IOException {
         InputStream is = null;
         String propsFileName = "config.properties" ;
 
@@ -18,8 +18,9 @@ public class PropertyManager {
             try {
                 utils.log().info("Loading config properties");
                 is = getClass().getClassLoader().getResourceAsStream(propsFileName);
-            }catch (IOException e)
-            {  e.printStackTrace();
+                props.load(is);
+            } catch(IOException e) {
+                e.printStackTrace();
                 utils.log().fatal("Failed to load config properties, Abort!!" + e.toString());
                 throw e;
             }finally {
@@ -27,9 +28,6 @@ public class PropertyManager {
                  is.close();
             }
         }
-
-
-
         return props;
     }
 }

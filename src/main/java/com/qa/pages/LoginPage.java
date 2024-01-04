@@ -48,5 +48,4 @@ public class LoginPage extends HeaderBar{
         sendKeys(passwordTxtFld, password);
         return pressLoginBtn();
     }
-
 }

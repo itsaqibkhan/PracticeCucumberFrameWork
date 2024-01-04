@@ -37,17 +37,17 @@ public class ServerManager {
 
 
     public AppiumDriverLocalService getAppiumService() {
-    //    HashMap<String, String> environment = new HashMap<String, String>();
-     //   environment.put("PATH", "/home/user/.npm-global/bin:/usr/local/lib/nodejs/node-v18.13.0-linux-x64/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH:/snap/bin:/usr/lib/jvm/jdk-15.0.2/bin:/home/user/Android/Sdk/tools:/home/user/Android/Sdk/platform-tools:/home/user/Android/Sdk/tools/bin" + System.getenv("PATH"));
-      //  environment.put("ANDROID_HOME", "/home/user/Android/Sdk");
+
+        HashMap<String, String> environment = new HashMap<String, String>();
+        environment.put("PATH", "/home/user/.npm-global/bin:/usr/local/lib/nodejs/node-v18.13.0-linux-x64/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH:/snap/bin:/usr/lib/jvm/jdk-15.0.2/bin:/home/user/Android/Sdk/tools:/home/user/Android/Sdk/platform-tools:/home/user/Android/Sdk/tools/bin" + System.getenv("PATH"));   //echo $PATH  to get this path
+        environment.put("ANDROID_HOME", "/home/user/Android/Sdk");
         GlobalParams params =new GlobalParams();
         return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
                 .usingDriverExecutable(new File("/usr/local/lib/nodejs/node-v18.13.0-linux-x64/bin/node"))
                 .withAppiumJS(new File("/usr/local/lib/nodejs/node-v18.13.0-linux-x64/lib/node_modules/appium/build/lib/main.js"))
                 .usingAnyFreePort()
-         //       .usingPort(4723)
                 .withArgument(GeneralServerFlag.SESSION_OVERRIDE)                            //To override the existing session
-         //       .withEnvironment(environment)
-                .withLogFile(new File(params.getPlaformName() +"_" + params.getDeviceName() + File.separator + "server.log")) );
+                .withEnvironment(environment)                                                // Because the system environment variable is not exposed to java
+                .withLogFile(new File(params.getPlaformName() +"_" + params.getDeviceName() + File.separator + "server.log")));                           // To output the log in this file
     }
 }
