@@ -11,6 +11,11 @@ target/
 *.iws
 *.iml
 *.ipr
+Android_pixel_8
+Android_Realme 7
+ServerLogs
+target
+.gitignore
 
 ### Eclipse ###
 .apt_generated

@@ -51,8 +51,8 @@ public class GlobalParams {
         GlobalParams params = new GlobalParams();
         Properties props = propertyManager.getProps();
         params.setPlatform(System.getProperty("platformName", "Android"));
-        params.setDeviceName(System.getProperty("deviceName", "Realme 7"));
-        params.setUdid(System.getProperty("udid", "L7854L45IJ8X5L5X"));
+        params.setDeviceName(System.getProperty("deviceName", "pixel_8"));
+        params.setUdid(System.getProperty("udid", "emulator-5554"));
         params.setAutomationName(props.getProperty("automationName"));
 
     }
