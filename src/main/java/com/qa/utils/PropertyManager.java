@@ -12,11 +12,10 @@ public class PropertyManager {
     public  Properties getProps() throws IOException {
         InputStream is = null;
         String propsFileName = "config.properties" ;
-
         if (props.isEmpty())
         {
             try {
-                utils.log().info("Loading config properties");
+//                utils.log().info("Loading config properties");   Need to comment as we are loggin before setting ThreadContext
                 is = getClass().getClassLoader().getResourceAsStream(propsFileName);
                 props.load(is);
             } catch(IOException e) {
